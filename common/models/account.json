@@ -113,14 +113,14 @@
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
-      "property": "loginAccount"
+      "property": "loginAccountJenius"
     },
     {
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
-      "property": "signUpAccount"
+      "property": "signUpAccountJenius"
     }
   ],
   "methods": {}
