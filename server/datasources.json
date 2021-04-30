@@ -1,0 +1,16 @@
+{
+  "db1": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "db": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "fajri-illahi",
+    "password": "",
+    "name": "fajrii",
+    "user": "",
+    "connector": "mongodb"
+  }
+}

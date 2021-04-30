@@ -1,0 +1,127 @@
+{
+  "name": "Account",
+  "plural": "Accounts",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "strictObjectIDCoercion": true
+  },
+  "hidden": [
+    "password"
+  ],
+  "properties": {
+    "password": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string",
+      "required": false
+    },
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "gender": {
+      "type": "number",
+      "required": false
+    },
+    "lastLoginDate": {
+      "type": "date"
+    },
+    "isLogin": {
+      "type": "boolean",
+      "default": false
+    },
+    "createdDate": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "Links": {
+      "type": "hasMany",
+      "model": "ConfigAccount",
+      "foreignKey": "accountId",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    },
+    "Creator": {
+      "type": "belongsTo",
+      "model": "Account",
+      "foreignKey": "createdId",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "medicaboo",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "changePassword"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "forgotPassword"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "createInitAccount"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "updatePassword"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "loginAccount"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "signUpAccount"
+    }
+  ],
+  "methods": {}
+}
